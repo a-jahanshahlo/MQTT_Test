@@ -1,0 +1,41 @@
+<h1 class="p-2">Logs Monitoring</h1>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col"  >
+      <h3>sensor_logs</h3>
+      <div *ngIf="tempLogs.length > 0" class=" bg-dark" style="overflow-y: auto; max-height: 800px; overflow-x: auto;max-width:40%;position:absolute" role="alert">
+        <p *ngFor="let item of tempLogs" class="text-info text-sm-start mx-2" style="white-space: nowrap;width:100%">
+          Log: [ 
+          DeviceID: {{item.deviceID}},
+          DeviceTime: {{item.deviceTime}},
+          Latitude: {{item.latitude}},
+          Longitude: {{item.longitude}},
+          Altitude: {{item.altitude}},
+          Course: {{item.course}},
+          Satellites: {{item.satellites}},
+          SpeedOTG: {{item.speedOTG}},
+          AccelerationX1: {{item.accelerationX1}},
+          AccelerationY1: {{item.accelerationY1}},
+          Signal: {{item.signal}},
+          PowerSupply: {{item.powerSupply}}
+          ]
+        </p>
+      </div>
+    </div>
+    <div class="col">
+      <h3>warning_logs</h3>
+      <div *ngIf="warnings.length > 0" class=" bg-dark" style="overflow-y: auto; max-height: 800px; overflow-x: auto; max-width: 40%; position: absolute"  role="alert">
+        <p *ngFor="let item of warnings" class="text-warning text-sm-start mx-2" style="white-space: nowrap;width:100%">
+          Log: [
+          DeviceID: {{item.deviceID}},
+          DeviceTime: {{item.warningTime}},
+          WarningType: {{item.warningType}},
+          ]
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
